@@ -92,7 +92,7 @@ const PropertyForm: React.FC = () => {
     try {
       // STEP 1: Replace this URL with your Google Apps Script Web App URL
       // Follow the instructions in google-sheets-setup.md to get your URL
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwqGnCZ9hUrkWfUoQEcMe9HKhKz5GX_JMPEHc5U1SDo1lQRH_lo7HmwxjOwVWlPS8X8/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSXHy85ggOGTPW0gCEvpWs8YQM6awh_A7tkw2VdqPp2GCvjUxnf4FoJtLjSNDdcsQv/exec';
       
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
