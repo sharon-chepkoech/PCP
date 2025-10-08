@@ -133,7 +133,7 @@ const PropertyForm: React.FC = () => {
               <img
                 src="https://i.pinimg.com/736x/16/65/3a/16653a58a87e1065465cff5e4d9fd53c.jpg"
                 alt="Received"
-                className="w-120 h-428 object-cover mx-auto rounded-lg shadow-lg"
+                className="w-64 h-48 object-cover mx-auto rounded-lg shadow-lg"
               />
             </div>
 
