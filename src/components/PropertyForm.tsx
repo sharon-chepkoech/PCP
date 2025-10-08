@@ -128,11 +128,11 @@ const PropertyForm: React.FC = () => {
       <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
         <div className="relative w-full max-w-xl">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl"></div>
-          <div className="relative bg-gradient-to-r from-[#111357to-[#FCBA04] rounded-3xl p-12 text-center shadow-2xl">
+          <div className="relative bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl p-12 text-center shadow-2xl">
             <div className="mb-8">
               <img
-                src="https://i.pinimg.com/736x/16/65/3a/16653a58a87e1065465cff5e4d9fd53c.jpg"
-                alt="Received"
+                src="https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Handshake"
                 className="w-64 h-48 object-cover mx-auto rounded-lg shadow-lg"
               />
             </div>
