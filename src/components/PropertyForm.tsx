@@ -132,8 +132,8 @@ const PropertyForm: React.FC = () => {
             <div className="mb-8">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-T1VUsGfeNymhcTl8DnV1WH0Cq1lIDZ3ubA&s"
-                alt="Handshake"
-                className="w-64 h-48 object-cover mx-auto rounded-lg shadow-lg"
+                alt="Received"
+                className="w-120 h-428 object-cover mx-auto rounded-lg shadow-lg"
               />
             </div>
 
