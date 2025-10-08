@@ -131,7 +131,7 @@ const PropertyForm: React.FC = () => {
           <div className="relative bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl p-12 text-center shadow-2xl">
             <div className="mb-8">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-T1VUsGfeNymhcTl8DnV1WH0Cq1lIDZ3ubA&s"
+                src="https://i.pinimg.com/736x/16/65/3a/16653a58a87e1065465cff5e4d9fd53c.jpg"
                 alt="Received"
                 className="w-120 h-428 object-cover mx-auto rounded-lg shadow-lg"
               />
