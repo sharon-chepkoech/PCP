@@ -29,6 +29,7 @@ const PropertyForm: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -112,18 +113,7 @@ const PropertyForm: React.FC = () => {
         })
       });
 
-      setSubmitMessage('✅ Thank you! Your details have been submitted. You\'ll receive a property report soon.');
-      
-      // Reset form
-      setFormData({
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
-        emailAddress: '',
-        propertyAddress: '',
-        planningSelling: '',
-        sellingSoon: ''
-      });
+      setShowSuccess(true);
       
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -132,6 +122,37 @@ const PropertyForm: React.FC = () => {
       setIsSubmitting(false);
     }
   };
+
+  if (showSuccess) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+        <div className="relative w-full max-w-xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl"></div>
+          <div className="relative bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl p-12 text-center shadow-2xl">
+            <div className="mb-8">
+              <img
+                src="https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=400"
+                alt="Handshake"
+                className="w-64 h-48 object-cover mx-auto rounded-lg shadow-lg"
+              />
+            </div>
+
+            <h1 className="text-5xl font-bold text-amber-400 mb-4">Received</h1>
+
+            <p className="text-white text-lg mb-2">Your application has been received.</p>
+            <p className="text-white text-lg mb-8">You will get an email with a property report</p>
+
+            <button
+              onClick={() => window.location.href = 'https://www.stonerealestate.com.au/'}
+              className="bg-white text-gray-800 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
