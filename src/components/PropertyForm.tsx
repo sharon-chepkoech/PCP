@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { ArrowLeft, Home } from 'lucide-react';
 
 interface FormData {
@@ -30,37 +30,6 @@ const PropertyForm: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
-  const addressInputRef = useRef<HTMLInputElement>(null);
-  const autocompleteRef = useRef<google.maps.places.Autocomplete | null>(null);
-
-  useEffect(() => {
-    if (!addressInputRef.current || !window.google) return;
-
-    autocompleteRef.current = new google.maps.places.Autocomplete(
-      addressInputRef.current,
-      {
-        componentRestrictions: { country: 'au' },
-        fields: ['formatted_address', 'address_components'],
-        types: ['address']
-      }
-    );
-
-    autocompleteRef.current.addListener('place_changed', () => {
-      const place = autocompleteRef.current?.getPlace();
-      if (place?.formatted_address) {
-        setFormData(prev => ({ ...prev, propertyAddress: place.formatted_address || '' }));
-        if (errors.propertyAddress) {
-          setErrors(prev => ({ ...prev, propertyAddress: '' }));
-        }
-      }
-    });
-
-    return () => {
-      if (autocompleteRef.current) {
-        google.maps.event.clearInstanceListeners(autocompleteRef.current);
-      }
-    };
-  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -324,12 +293,11 @@ const PropertyForm: React.FC = () => {
                     Property Address <span className="text-red-500">*</span>
                   </label>
                   <input
-                    ref={addressInputRef}
                     type="text"
                     name="propertyAddress"
                     value={formData.propertyAddress}
                     onChange={handleInputChange}
-                    placeholder="Start typing your Australian address..."
+                    placeholder="Enter property address"
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 ${
                       errors.propertyAddress ? 'border-red-300 bg-red-50' : 'border-gray-300'
                     }`}
