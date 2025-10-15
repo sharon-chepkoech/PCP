@@ -131,7 +131,7 @@ const PropertyForm: React.FC = () => {
           <div className="relative bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl p-12 text-center shadow-2xl">
             <div className="mb-8">
               <img
-                src="https://images.pexels.com/photos/1194420/pexels-photo-1194420.jpeg?auto=compress&cs=tinysrgb&w=400"
+                src="https://github.com/sharon-chepkoech/PCP/blob/main/src/Group%209.png"
                 alt="Handshake"
                 className="w-64 h-48 object-cover mx-auto rounded-lg shadow-lg"
               />
