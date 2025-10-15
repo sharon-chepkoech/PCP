@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Home } from 'lucide-react';
+// ✅ Add this at the very top of PropertyForm.tsx
+import Handshake from '../Handshake.png';
+
 
 interface FormData {
   firstName: string;
@@ -131,9 +134,9 @@ const PropertyForm: React.FC = () => {
           <div className="relative bg-gradient-to-r from-slate-700 to-amber-400 rounded-3xl p-12 text-center shadow-2xl">
             <div className="mb-8">
               <img
-                src= url('PCP/src/Handshake.png')
+                src={Handshake}
                 alt="Handshake"
-                className="w-64 h-50"
+                className="w-64 h-50 mx-auto"
               />
             </div>
 
